@@ -7,7 +7,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
     stats: { children: true },
   output: {
-    path: path.join(__dirname, "dist"),
+    path: path.join(__dirname, "../dist"),
     filename: "main.bundle-[hash].js",
     clean: true,
   },
