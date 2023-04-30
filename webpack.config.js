@@ -32,6 +32,21 @@ module.exports = {
         use: {
           loader: "babel-loader"
         }
+      },
+      {
+        test: /\.s?css$/, // archivos .css o .scss
+        use: [
+          { loader: 'style-loader' },
+          { loader: 'css-loader' },
+          { loader: 'sass-loader'},
+        ]
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+        loader: 'file-loader',
+        options: {
+          name: 'static/media/[name].[hash:8].[ext]',
+        },
       }
     ],
   },
