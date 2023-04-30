@@ -10,6 +10,7 @@ const devConfig={
         compress: true,
         port: 9000,
       },
+    devtool:"eval-source-map"
     
 }
 
