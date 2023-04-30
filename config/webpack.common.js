@@ -16,10 +16,9 @@ module.exports = {
     extensions: [".js",".jsx",".ts",".html"],
   },
 
-  mode: process.env.NODE_ENV || "development",
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, "public", "index.html"),
+      template: path.join(__dirname, "../public", "index.html"),
       filename: "index.html",
     }),
   ],
