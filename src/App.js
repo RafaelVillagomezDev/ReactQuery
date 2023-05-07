@@ -1,12 +1,26 @@
-import React from 'react'
-function App(){
+import React from "react";
+import { useAuth0 } from "@auth0/auth0-react";
+import { LoginButton } from "./Login";
+import { LogoutButton } from "./Logout";
+import { Profile } from "./Profile";
+function App() {
+  const {isAuthenticated} = useAuth0();
+  return (
+    <div id="app" className="App">
+      {isAuthenticated ? (
+        <>
+          <Profile />
+         
 
-    return (
-        <div id="app" className="App">
-            <h1>Soy Asss </h1>
-            <h2>skskzzss</h2>
-        </div>
-    )
+          <LogoutButton />
+        </>
+      ) : (
+        <>
+          <LoginButton />
+        </>
+      )}
+    </div>
+  );
 }
 
-export default App
+export default App;
