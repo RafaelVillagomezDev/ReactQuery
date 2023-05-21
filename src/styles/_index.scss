@@ -1,0 +1,160 @@
+@use './mixin.scss' as *;
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Righteous&display=swap');
+.login_container{
+    background-color: #252440;
+    display: flex;
+    flex-direction: column-reverse;
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.login_container-login{
+    width: 100%;
+    padding: 3rem 0rem 2rem 0rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#login_box-one{
+    display: flex;
+    justify-content: center;
+
+}
+
+#login_img{
+    width: 60%;
+    height: 300px;
+    border-radius: 20px;
+}
+
+
+#login_title-main{
+    display: none;
+}
+
+.login_text-title{
+    text-align: center;
+    
+    h2{
+        font-size: 22px;
+        color:#ffff ;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-family: 'Righteous', cursive;
+        line-height: 1.4rem;
+    }
+}
+
+.login_title-init{
+   
+    h1{
+        line-height: 3rem;
+        font-size: 30px;
+        color:#ffff ;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-family: 'Courgette', cursive;
+    }
+    span{
+        color: greenyellow;
+    }
+}
+
+.login_title-initmobile{
+    padding-bottom: 2rem;
+    h1{
+        line-height: 3rem;
+        font-size: 50px;
+        color:#ffff ;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-family: 'Courgette', cursive;
+    }
+    span{
+        color: greenyellow;
+    }
+}
+
+#login_button-btn{
+    padding:1rem 2rem ;
+    width: 100%;
+    border-radius: 20px;
+    background-color:greenyellow;
+    outline: none;
+    border:none;
+    font-size: 24px;
+    color:black;
+    margin-top: 2rem;
+    padding: 1rem 3rem;
+}
+
+#login_button-btn:hover{
+   
+    background-color: aliceblue;
+}
+
+.login_text-sub{
+    span{
+        color:pink;
+    }
+}
+
+@include media(tablet-max){
+    .login_container{
+        flex-direction:column; 
+    
+    }
+
+    #login_img {
+        width: 60%;
+        height: 500px;
+    }
+}
+
+@include media(tablet-max){
+
+    .login_title-initmobile{
+        display: none;
+    }
+    .login_container{
+        flex-direction:row; 
+      
+    
+    }
+
+    .login_text-title{
+        padding:2rem 1rem;
+    }
+    .login_text-title h2{
+        line-height: 2rem;
+    }
+
+    #login_title-main{
+        display: block;
+    }
+    
+    #login_img {
+        width: 60%;
+        height: 500px;
+    }
+
+    .login_container-login{
+        margin: 4rem 2rem ;
+        width: 50%;
+    }
+
+    .login_text-title{
+        h2{
+            font-size: 35px;
+        }
+    }
+
+    .login_title-init h1{
+        font-size:70px ;
+    }
+}
+
