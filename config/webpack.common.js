@@ -1,11 +1,9 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
-
-
 // Webpack configuration
 module.exports = {
-    stats: { children: true },
+  stats: { children: true },
   output: {
     path: path.join(__dirname, "../dist"),
     filename: "main.bundle-[hash].js",
@@ -13,7 +11,7 @@ module.exports = {
   },
 
   resolve: {
-    extensions: [".js",".jsx",".ts",".html"],
+    extensions: [".js", ".jsx", ".ts", ".html"],
   },
 
   plugins: [
@@ -30,24 +28,27 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader"
-        }
+          loader: "babel-loader",
+        },
       },
       {
         test: /\.s?css$/, // archivos .css o .scss
         use: [
-          { loader: 'style-loader' },
-          { loader: 'css-loader' },
-          { loader: 'sass-loader'},
-        ]
+          { loader: "style-loader" },
+          { loader: "css-loader" },
+          { loader: "sass-loader" },
+        ],
       },
       {
         test: /\.(png|jpg|gif)$/,
-        loader: 'file-loader',
-        options: {
-          name: 'static/media/[name].[hash:8].[ext]',
-        },
-      }
+        use: [
+          {
+            limit: 8000,
+            loader: "file-loader",
+            options: { name: "public/assets/img/[hash].[ext]" },
+          },
+        ],
+      },
     ],
   },
 };
